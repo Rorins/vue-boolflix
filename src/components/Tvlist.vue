@@ -2,27 +2,25 @@
   <section>
       <!--Loopin our prop movieList that expects an array(that array is in Header,
        it's our "movieList" (our array in API)-->
-      <div v-for='(movie,index) in movieList' :key="`movie-${index}`">
-          <h3>title:{{movie.title}}</h3>
-          <h3>original title:{{movie.original_title}}</h3>
+      <div v-for='(series,index) in tvList' :key="`tv-${index}`">
+          <h3>title:{{series.name}}</h3>
+          <h3>original title:{{series.original_name}}</h3>
         <!--Using my flagAdd we should have a value true or false if true we have a flag-->
-          <img v-if="flagAdd(movie.original_language)" :src="require(`../assets/${movie.original_language}.png`)" alt="">
+          <img v-if="flagAdd(series.original_language)" :src="require(`../assets/${series.original_language}.png`)" alt="">
           <!--If not we only have the string language-->
-          <h3 v-else>language:{{movie.original_language}}</h3>
-          <h3 >vote:{{movie.vote_average}}</h3>
+          <h3 v-else>language:{{series.original_language}}</h3>
+          <h3 >vote:{{series.vote_average}}</h3>
           
       </div>
   </section>
 </template>
 
 <script>
-
-
 export default {
-name:'Movielist',
-//Import of movie list in App.vue with props( expects an array)
+name: 'Tvlist',
+//Import of tv list in App.vue with props( expects an array)
 props:{
-    movieList: Array
+    tvList: Array
 },
 methods:{
     //Add flag function, 
@@ -33,20 +31,11 @@ methods:{
         //of my array languages, if yer it's TRUE, else it's FALSE
         return languages.includes(language) ? true : false;
     
-   
     },
 }
 }
-
-
 </script>
 
-<style scoped lang="scss">
-div{
-    margin-bottom: 40px;
-}
-   img{
-       width:60px;
-   }
-</style>
+<style>
 
+</style>
