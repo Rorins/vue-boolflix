@@ -1,12 +1,14 @@
 <template>
   <section>
-      <!--Loopin our prop movieList that expects an array(that array is in Header,
-       it's our "movieList" (our array in API)-->
+      <!--Loopin our prop tvList that expects an array(that array is in Header,
+       it's our "tvList" (our array in API)-->
       <div v-for='(series,index) in tvList' :key="`tv-${index}`">
+          <!--Adding poster-->
+          <img class="poster" :src="`https://image.tmdb.org/t/p/w154/${series.poster_path}`" :alt="series.original_name">
           <h3>title:{{series.name}}</h3>
           <h3>original title:{{series.original_name}}</h3>
         <!--Using my flagAdd we should have a value true or false if true we have a flag-->
-          <img v-if="flagAdd(series.original_language)" :src="require(`../assets/${series.original_language}.png`)" alt="">
+          <img class="flag" v-if="flagAdd(series.original_language)" :src="require(`../assets/${series.original_language}.png`)" :alt="series.original_language">
           <!--If not we only have the string language-->
           <h3 v-else>language:{{series.original_language}}</h3>
           <h3 >vote:{{series.vote_average}}</h3>
@@ -36,6 +38,11 @@ methods:{
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+div{
+    margin-bottom: 40px;
+}
+   .flag{
+       width:60px;
+   }
 </style>
