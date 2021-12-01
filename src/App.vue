@@ -43,6 +43,7 @@ export default {
 methods:{
     getMovies(data){
     //MOVIES CALL
+    if(data !== ""){
     axios.get('https://api.themoviedb.org/3/search/movie',{
         params:{
             api_key: '5ac3e59b84003d2645abcdbaac824d36',
@@ -70,7 +71,7 @@ methods:{
     })
     .catch(error => console.log(error));
         
-    },
+    }},
     
 }
 }

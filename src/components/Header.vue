@@ -1,7 +1,7 @@
 <template>
   <header>
      <!--NAVBAR-->
- <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark">
+ <nav class="navbar fixed-top navbar-expand-lg navbar-dark ">
   <a href=""><img class="logo" src="../assets/netflix-logo.png" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
         where data is in fact searchKey-->
       <button @click ="$emit('search',searchKey)" class="btn btn-outline-secondary" type="button">Button</button>
       </div>
-      <input v-model="searchKey" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+      <input v-model.trim="searchKey" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
       </div>
   
   </div>
@@ -54,11 +54,9 @@ data(){
 </script>
 
 <style scoped lang="scss">
-header{
-  padding-bottom:20px;
-}
-.navbar-light .navbar-nav .nav-link{
-  color:white;
+
+.navbar {
+background-color: black;
 }
 button{
   color:white;

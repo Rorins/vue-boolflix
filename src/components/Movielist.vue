@@ -7,7 +7,8 @@
        it's our "movieList" (our array in API)-->
       <div v-for='(movie,index) in movieList' :key="`movie-${index}`">
           <!--Adding poster-->
-          <img class="poster" :src="`https://image.tmdb.org/t/p/w154/${movie.poster_path}`" :alt="movie.original_title">
+          <img v-if="poster !== null " class="poster" :src="`https://image.tmdb.org/t/p/w154/${movie.poster_path}`" :alt="movie.original_title">
+          <img v-else src="https://www.auroraviaggi.com/media/1009/sm-placeholder-1024x512.png" alt="">
           <h3>title:{{movie.title}}</h3>
           <h3>original title:{{movie.original_title}}</h3>
         <!--Using my flagAdd we should have a value true or false if true we have a flag-->
