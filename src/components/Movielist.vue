@@ -11,7 +11,7 @@
           <img class="flag" v-if="flagAdd(movie.original_language)" :src="require(`../assets/${movie.original_language}.png`)" :alt="movie.original_language">
           <!--If not we only have the string language-->
           <h3 v-else>language:{{movie.original_language}}</h3>
-          <h3 >vote:{{movie.vote_average}}</h3>
+          <h3 >vote:{{roundNumber(movie.vote_average)}}</h3>
           
       </div>
   </section>
@@ -37,6 +37,10 @@ methods:{
     
    
     },
+    //Round number
+    roundNumber(number){
+       return Math.ceil(number/2)
+    }
 }
 }
 
