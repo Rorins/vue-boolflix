@@ -31,7 +31,7 @@
         <!--This is an event that starts everything, it communicates with father(App.vue)
         when this button is clicked the father will listen and start another function getMovie(data)
         where data is in fact searchKey-->
-      <button @click ="$emit('search',searchKey)" class="btn btn-outline-secondary" type="button">Button</button>
+      <button @click ="$emit('search',searchKey)" class="btn btn-outline-secondary" type="button">Search</button>
       </div>
       <input v-model.trim="searchKey" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
       </div>
