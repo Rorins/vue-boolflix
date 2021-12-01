@@ -1,5 +1,8 @@
 <template>
   <section>
+      <!--TV LIST-->
+      <h1>Tv series</h1>
+      <div class="d-flex">
       <!--Loopin our prop tvList that expects an array(that array is in Header,
        it's our "tvList" (our array in API)-->
       <div v-for='(series,index) in tvList' :key="`tv-${index}`">
@@ -11,8 +14,9 @@
           <img class="flag" v-if="flagAdd(series.original_language)" :src="require(`../assets/${series.original_language}.png`)" :alt="series.original_language">
           <!--If not we only have the string language-->
           <h3 v-else>language:{{series.original_language}}</h3>
-          <h3 >vote:{{series.vote_average}}</h3>
-          
+          <!--for element (number) of vote, from 1 to 5-->
+          <i v-for='(number,index) in roundNumber(series.vote_average)' :key="`movie-${index}`" class="fas fa-star"></i>
+      </div>
       </div>
   </section>
 </template>

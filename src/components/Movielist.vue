@@ -1,5 +1,8 @@
 <template>
   <section>
+      <!--MOVIE LIST-->
+      <h1>Movies</h1>
+      <div class="d-flex">
       <!--Loopin our prop movieList that expects an array(that array is in Header,
        it's our "movieList" (our array in API)-->
       <div v-for='(movie,index) in movieList' :key="`movie-${index}`">
@@ -11,9 +14,9 @@
           <img class="flag" v-if="flagAdd(movie.original_language)" :src="require(`../assets/${movie.original_language}.png`)" :alt="movie.original_language">
           <!--If not we only have the string language-->
           <h3 v-else>language:{{movie.original_language}}</h3>
-          <!--for element (number) of vote, from 1 to 10-->
+          <!--for element (number) of vote, from 1 to 5-->
           <i v-for='(number,index) in roundNumber(movie.vote_average)' :key="`movie-${index}`" class="fas fa-star"></i>
-            
+        </div>
       </div>
   </section>
 </template>

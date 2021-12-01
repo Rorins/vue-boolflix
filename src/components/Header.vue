@@ -1,5 +1,30 @@
 <template>
   <header>
+     <!--NAVBAR-->
+ <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark">
+  <a href=""><img class="logo" src="../assets/netflix-logo.png" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse d-flex justify-content-lg-between" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Guarda di nuovo</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Serie TV</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Vuovi e popolari</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">La mia lista</a>
+      </li>
+    </ul>
     <!--Search bar-->
       <div class="filter-bar input-group mb-3">
       <div class="input-group-prepend">
@@ -10,6 +35,9 @@
       </div>
       <input v-model="searchKey" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
       </div>
+  
+  </div>
+</nav>
   </header>
 </template>
 
@@ -26,7 +54,19 @@ data(){
 </script>
 
 <style scoped lang="scss">
-.filter-bar{
-  width: 300px;
+header{
+  padding-bottom:20px;
 }
+.navbar-light .navbar-nav .nav-link{
+  color:white;
+}
+button{
+  color:white;
+}
+    .logo{
+    width:150px;
+    }
+    .filter-bar{
+    width: 300px;
+    }
 </style>
