@@ -11,8 +11,9 @@
           <img class="flag" v-if="flagAdd(movie.original_language)" :src="require(`../assets/${movie.original_language}.png`)" :alt="movie.original_language">
           <!--If not we only have the string language-->
           <h3 v-else>language:{{movie.original_language}}</h3>
-          <h3 >vote:{{roundNumber(movie.vote_average)}}</h3>
-          
+          <!--for element (number) of vote, from 1 to 10-->
+          <i v-for='(number,index) in roundNumber(movie.vote_average)' :key="`movie-${index}`" class="fas fa-star"></i>
+            
       </div>
   </section>
 </template>
