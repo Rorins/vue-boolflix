@@ -74,9 +74,12 @@ h3{
     min-width:150px;
     position:relative;
     margin:20px;
-        &:hover .description{
-            display:block;
-        }
+    &:hover{
+    cursor:pointer;
+    }
+    &:hover .description{
+        display:block;
+    }
 }
 .poster{
     height:100%;

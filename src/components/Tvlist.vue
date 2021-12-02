@@ -2,7 +2,7 @@
   <section>
       <!--TV LIST-->
       <h1>Tv series</h1>
-      <div v-if="tvList" class="d-flex flex-wrap container">
+      <div v-if="tvList !== null" class="d-flex flex-wrap container">
       <!--Loopin our prop tvList that expects an array(that array is in Header,
        it's our "tvList" (our array in API)-->
 
@@ -73,9 +73,12 @@ h3{
     min-width:150px;
     position:relative;
     margin:20px;
-        &:hover .description{
-            display:block;
-        }
+    &:hover{
+    cursor:pointer;
+    }
+    &:hover .description{
+        display:block;
+    }    
 }
 .poster{
     height:100%;

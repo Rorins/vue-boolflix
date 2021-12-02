@@ -13,16 +13,16 @@
         <a class="nav-link" href="#">Home </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Guarda di nuovo</a>
+        <a class="nav-link" href="#">Watch again</a>
       </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Serie TV</a>
+        <a class="nav-link" href="#">TV Series</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Vuovi e popolari</a>
+        <a class="nav-link" href="#">New and popular</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">La mia lista</a>
+        <a class="nav-link" href="#">My list</a>
       </li>
     </ul>
     <!--Search bar-->
@@ -34,7 +34,7 @@
         where data is in fact searchKey-->
       <button @click ="$emit('search',searchKey)" class="btn btn-outline-secondary" type="button">Search</button>
       </div>
-      <input v-model.trim="searchKey" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+      <input @keyup.enter="$emit('search',searchKey)" v-model.trim="searchKey" type="text" class="form-control" placeholder="Search" aria-label="" aria-describedby="basic-addon1">
       </div>
       <i class="far fa-bell"></i>
       <img class="user" src="../assets/user.png" alt="">
