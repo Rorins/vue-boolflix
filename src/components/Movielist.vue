@@ -2,7 +2,8 @@
   <section>
       <!--MOVIE LIST-->
       <h1>Movies</h1>
-      <div class="d-flex flex-wrap container">
+      <div v-if="movieList !== null" class="d-flex flex-wrap container">
+
       <!--Loopin our prop movieList that expects an array(that array is in Header,
        it's our "movieList" (our array in API)-->
 
@@ -26,14 +27,18 @@
 
       </div>
 
+      <Loader v-else />
+
   </section>
 </template>
 
 <script>
-
-
+import Loader from '@/components/Loader.vue'
 export default {
 name:'Movielist',
+components:{
+    Loader,
+},
 //Import of movie list in App.vue with props( expects an array)
 props:{
     movieList: Array

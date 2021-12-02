@@ -2,7 +2,7 @@
   <section>
       <!--TV LIST-->
       <h1>Tv series</h1>
-      <div class="d-flex flex-wrap container">
+      <div v-if="tvList" class="d-flex flex-wrap container">
       <!--Loopin our prop tvList that expects an array(that array is in Header,
        it's our "tvList" (our array in API)-->
 
@@ -27,13 +27,18 @@
           </div>
 
       </div>
+      <Loader v-else />
 
   </section>
 </template>
 
 <script>
+import Loader from '@/components/Loader.vue'
 export default {
 name: 'Tvlist',
+components:{
+    Loader,
+},
 //Import of tv list in App.vue with props( expects an array)
 props:{
     tvList: Array

@@ -11,6 +11,7 @@
     while fetching the data from the API here, same for TVlist -->
     <Movielist :movieList = "movieList"/>
     <Tvlist :tvList = "tvList" />
+
   </main>
   </div>
 </template>

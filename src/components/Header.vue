@@ -10,7 +10,7 @@
   <div class="collapse navbar-collapse d-flex justify-content-lg-between" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Home </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Guarda di nuovo</a>
@@ -61,6 +61,7 @@ data(){
 
 .navbar {
 background-color: black;
+padding-right:20px;
 }
   .logo{
     width:150px;
