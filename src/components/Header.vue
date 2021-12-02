@@ -58,13 +58,16 @@ data(){
 .navbar {
 background-color: black;
 }
-button{
-  color:white;
-}
-    .logo{
+  .logo{
     width:150px;
     }
-    .filter-bar{
-    width: 300px;
-    }
+  button{
+  color:white;
+  }
+    
+  .filter-bar{
+  width: 300px;
+  padding-right:40px;
+  }
+
 </style>
