@@ -26,6 +26,7 @@
       </li>
     </ul>
     <!--Search bar-->
+    <div class="d-flex tool-box">
       <div class="filter-bar input-group mb-3">
       <div class="input-group-prepend">
         <!--This is an event that starts everything, it communicates with father(App.vue)
@@ -35,7 +36,10 @@
       </div>
       <input v-model.trim="searchKey" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
       </div>
-  
+      <i class="far fa-bell"></i>
+      <img class="user" src="../assets/user.png" alt="">
+      </div>
+      
   </div>
 </nav>
   </header>
@@ -64,10 +68,20 @@ background-color: black;
   button{
   color:white;
   }
-    
+  .tool-box *{
+    margin-left:20px;
+  }  
   .filter-bar{
   width: 300px;
-  padding-right:40px;
   }
+  .fa-bell{
+    font-size: 30px;
+  }
+  .user{
+    width:40px;
+    height:40px;
+    border-radius:10px;
+  }
+  
 
 </style>

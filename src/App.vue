@@ -51,7 +51,6 @@ methods:{
         }
     })
     .then(result=>{
-        console.log(result.data.results);
         //assigning data of API to movielist, we can refer to the array as movieList now
         this.movieList = result.data.results
     })
@@ -65,7 +64,6 @@ methods:{
         }
     })
     .then(result=>{
-        console.log(result.data.results);
         //assigning data of API to tvlist, we can refer to the array as tvList now
         this.tvList = result.data.results
     })

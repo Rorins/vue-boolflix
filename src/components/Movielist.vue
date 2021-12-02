@@ -2,23 +2,21 @@
   <section>
       <!--MOVIE LIST-->
       <h1>Movies</h1>
-      <div class="d-flex">
+      <div class="d-flex flex-wrap container">
       <!--Loopin our prop movieList that expects an array(that array is in Header,
        it's our "movieList" (our array in API)-->
 
       <div class="netflix_card" v-for='(movie,index) in movieList' :key="`movie-${index}`">
           <!--Adding poster-->
-          <div class="poster-preview">
-          <img v-if="poster !== null " class="poster" :src="`https://image.tmdb.org/t/p/w154/${movie.poster_path}`" :alt="movie.original_title">
-          <img v-else src="https://www.auroraviaggi.com/media/1009/sm-placeholder-1024x512.png" alt="">
-          </div>
-
+          <img v-if="movie.poster !== null " class="poster" :src="`https://image.tmdb.org/t/p/w154/${movie.poster_path}`" :alt="movie.original_title">
+          <!-- <img v-else src="https://www.auroraviaggi.com/media/1009/sm-placeholder-1024x512.png" alt=""> -->
+         
           <!--Show only with hover-->
           <div class="description">
           <h3>title:{{movie.title}}</h3>
           <h3>original title:{{movie.original_title}}</h3>
         <!--Using my flagAdd we should have a value true or false if true we have a flag-->
-          <img class="flag" v-if="flagAdd(movie.original_language)" :src="require(`../assets/${movie.original_language}.png`)" :alt="movie.original_language">
+          <img class="flag" v-if="flagAdd(movie.original_language)" :src="require(`../assets/${movie.original_language}.png`)" :alt="movie.original_language"> 
           <!--If not we only have the string language-->
           <h3 v-else>language:{{movie.original_language}}</h3>
           <!--for element (number) of vote, from 1 to 5-->
@@ -60,26 +58,39 @@ methods:{
 </script>
 
 <style scoped lang="scss">
+h1{
+    color:white;
+}
+h3{
+    font-size:18px;
+}
 .netflix_card{
-    margin-bottom: 40px;
+    min-height:200px;
+    min-width:150px;
     position:relative;
+    margin:20px;
         &:hover .description{
             display:block;
         }
 }
+.poster{
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 
-    .description{
-        background-color:black;
-        position:absolute;
-        top:0;
-        width:100%;
-        height:100%;
-        display:none;
-    }
-    .flag{
-        width:60px;
-    }
+.description{
+    background-color:black;
+    position:absolute;
+    top:0;
+    width:160px;
+    height:300px;
+    display:none;
+}
+   .flag{
+       width:60px;
+   }
 
 </style>
 

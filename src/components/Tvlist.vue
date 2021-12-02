@@ -2,15 +2,16 @@
   <section>
       <!--TV LIST-->
       <h1>Tv series</h1>
-      <div class="d-flex">
+      <div class="d-flex flex-wrap container">
       <!--Loopin our prop tvList that expects an array(that array is in Header,
        it's our "tvList" (our array in API)-->
+
       <div class="netflix_card" v-for='(series,index) in tvList' :key="`tv-${index}`">
           <!--Adding poster-->
-          <div class="poster-preview">
-          <img v-if="poster !== null " class="poster" :src="`https://image.tmdb.org/t/p/w154/${series.poster_path}`" :alt="series.original_name">
-          <img v-else src="https://www.auroraviaggi.com/media/1009/sm-placeholder-1024x512.png" alt="">
-          </div>
+          
+          <img v-if="series.poster !== null " class="poster" :src="`https://image.tmdb.org/t/p/w154/${series.poster_path}`" :alt="series.original_name">
+          <!-- <img v-else src="https://www.auroraviaggi.com/media/1009/sm-placeholder-1024x512.png" :alt="series.original_name"> -->
+          
          
          <!--Show only with hover-->
          <div class="description">
@@ -24,6 +25,7 @@
           <i v-for='(number,index) in roundNumber(series.vote_average)' :key="`movie-${index}`" class="fas fa-star"></i>
           </div>
           </div>
+
       </div>
 
   </section>
@@ -55,24 +57,38 @@ methods:{
 </script>
 
 <style scoped lang="scss">
+h1{
+    color:white;
+}
+h3{
+    font-size:18px;
+}
 .netflix_card{
-    margin-bottom: 40px;
+    min-height:200px;
+    min-width:150px;
     position:relative;
+    margin:20px;
         &:hover .description{
             display:block;
         }
 }
+.poster{
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 
-    .description{
-        background-color:black;
-        position:absolute;
-        top:0;
-        width:100%;
-        height:100%;
-        display:none;
-    }
-    .flag{
-        width:60px;
-    }
+.description{
+    background-color:black;
+    position:absolute;
+    top:0;
+    width:160px;
+    height:300px;
+    display:none;
+}
+   .flag{
+       width:60px;
+   }
+
 </style>
