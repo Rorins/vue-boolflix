@@ -8,9 +8,9 @@
 
       <div class="netflix_card" v-for='(series,index) in tvList' :key="`tv-${index}`">
           <!--Adding poster-->
+          <img class="placeholder_image" v-if="series.poster_path == null" src="https://www.auroraviaggi.com/media/1009/sm-placeholder-1024x512.png" :alt="series.original_name">
+          <img v-else class="poster" :src="`https://image.tmdb.org/t/p/w154/${series.poster_path}`" :alt="series.original_name">
           
-          <img v-if="series.poster !== null " class="poster" :src="`https://image.tmdb.org/t/p/w154/${series.poster_path}`" :alt="series.original_name">
-          <!-- <img v-else src="https://www.auroraviaggi.com/media/1009/sm-placeholder-1024x512.png" :alt="series.original_name"> -->
           
          
          <!--Show only with hover-->
@@ -78,6 +78,11 @@ h3{
     object-fit: cover;
 }
 
+.placeholder_image{
+    height:100%;
+    width:150px;
+    object-fit: cover;
+}
 
 .description{
     background-color:black;
