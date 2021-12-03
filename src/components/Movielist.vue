@@ -83,11 +83,6 @@ h3{
         display:block;
     }
 }
-.poster{
-    height:100%;
-    width: 100%;
-    object-fit: cover;
-}
 
 .placeholder_image{
     height:100%;
@@ -103,9 +98,7 @@ h3{
     height:300px;
     display:none;
 }
-   .flag{
-       width:60px;
-   }
+   
 
 </style>
 

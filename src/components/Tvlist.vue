@@ -69,23 +69,6 @@ h1{
 h3{
     font-size:18px;
 }
-.netflix_card{
-    min-height:200px;
-    min-width:150px;
-    position:relative;
-    margin:20px;
-    &:hover{
-    cursor:pointer;
-    }
-    &:hover .description{
-        display:block;
-    }    
-}
-.poster{
-    height:100%;
-    width: 100%;
-    object-fit: cover;
-}
 
 .placeholder_image{
     height:100%;
@@ -102,8 +85,6 @@ h3{
     display:none;
 }
 
-   .flag{
-       width:60px;
-   }
+   
 
 </style>
