@@ -58,16 +58,18 @@ data(){
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/variables';
 
 .navbar {
 background-color: black;
 padding-right:20px;
+color:$primary-col;
 }
   .logo{
     width:150px;
     }
   button{
-  color:white;
+  color:$primary-col;
   }
   .tool-box *{
     margin-left:20px;

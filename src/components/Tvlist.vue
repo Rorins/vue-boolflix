@@ -1,7 +1,7 @@
 <template>
   <section>
       <!--TV LIST-->
-      <h1>Tv series</h1>
+      <h1 class="text-center">Tv series</h1>
       <div v-if="tvList !== null" class="d-flex flex-wrap container">
       <!--Loopin our prop tvList that expects an array(that array is in Header,
        it's our "tvList" (our array in API)-->
@@ -15,13 +15,14 @@
          
          <!--Show only with hover-->
          <div class="description">
-          <h3>title:{{series.name}}</h3>
-          <h3>original title:{{series.original_name}}</h3>
+          <h3>Title:{{series.name}}</h3>
+          <h3>Original Title:{{series.original_name}}</h3>
         <!--Using my flagAdd we should have a value true or false if true we have a flag-->
           <img class="flag" v-if="flagAdd(series.original_language)" :src="require(`../assets/${series.original_language}.png`)" :alt="series.original_language">
           <!--If not we only have the string language-->
-          <h3 v-else>language:{{series.original_language}}</h3>
+          <h3 v-else>Language:{{series.original_language}}</h3>
           <!--for element (number) of vote, from 1 to 5-->
+          <h3>Vote:</h3>
           <i v-for='(number,index) in roundNumber(series.vote_average)' :key="`movie-${index}`" class="fas fa-star"></i>
           </div>
           </div>
@@ -63,7 +64,7 @@ methods:{
 
 <style scoped lang="scss">
 h1{
-    color:white;
+    color:rgb(189, 3, 3);
 }
 h3{
     font-size:18px;
@@ -100,6 +101,7 @@ h3{
     height:300px;
     display:none;
 }
+
    .flag{
        width:60px;
    }
