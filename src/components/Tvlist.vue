@@ -23,7 +23,9 @@
           <h3 v-else>Language:{{series.original_language}}</h3>
           <!--for element (number) of vote, from 1 to 5-->
           <h3>Vote:</h3>
+          <!--vote average is divided by 10 and rounded then repeated 5 times-->
           <i v-for='(number,index) in roundNumber(series.vote_average)' :key="`movie-${index}`" class="fas fa-star"></i>
+          <i v-for="(number, index) in 5 - roundNumber(series.vote_average) " :key="index" class="far fa-star"></i> 
           </div>
           </div>
 

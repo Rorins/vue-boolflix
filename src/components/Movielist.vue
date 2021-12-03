@@ -23,6 +23,7 @@
           <!--for element (number) of vote, from 1 to 5-->
           <h3>Vote:</h3>
           <i v-for='(number,index) in roundNumber(movie.vote_average)' :key="`movie-${index}`" class="fas fa-star"></i>
+          <i v-for="(number, index) in 5 - roundNumber(movie.vote_average) " :key="index" class="far fa-star"></i> 
           </div>
           </div>
 
