@@ -6,29 +6,16 @@
       <!--Loopin our prop tvList that expects an array(that array is in Header,
        it's our "tvList" (our array in API)-->
 
-      <div class="netflix_card" v-for='(series,index) in tvList' :key="`tv-${index}`">
-          <!--Adding poster-->
-          <img class="placeholder_image" v-if="series.poster_path == null" src="https://www.auroraviaggi.com/media/1009/sm-placeholder-1024x512.png" :alt="series.original_name">
-          <img v-else class="poster" :src="`https://image.tmdb.org/t/p/w154/${series.poster_path}`" :alt="series.original_name">
-          
-          
+      <div  v-for='(series,index) in tvList' :key="`tv-${index}`">
+          <Card 
+            :poster='series.poster_path'
+            :placeholder='"https://www.auroraviaggi.com/media/1009/sm-placeholder-1024x512.png"'
+            :title='series.name'
+            :originalTitle='series.original_name' 
+            :language='series.original_language'
+            :vote='series.vote_average'/>
          
-         <!--Show only with hover-->
-         <div class="description">
-          <h3>Title:{{series.name}}</h3>
-          <h3>Original Title:{{series.original_name}}</h3>
-        <!--Using my flagAdd we should have a value true or false if true we have a flag-->
-          <img class="flag" v-if="flagAdd(series.original_language)" :src="require(`../assets/${series.original_language}.png`)" :alt="series.original_language">
-          <!--If not we only have the string language-->
-          <h3 v-else>Language:{{series.original_language}}</h3>
-          <!--for element (number) of vote, from 1 to 5-->
-          <h3>Vote:</h3>
-          <!--vote average is divided by 10 and rounded then repeated 5 times-->
-          <i v-for='(number,index) in roundNumber(series.vote_average)' :key="`movie-${index}`" class="fas fa-star"></i>
-          <i v-for="(number, index) in 5 - roundNumber(series.vote_average) " :key="index" class="far fa-star"></i> 
           </div>
-          </div>
-
       </div>
       <Loader v-else />
 
@@ -36,11 +23,15 @@
 </template>
 
 <script>
+//IMPORTS
 import Loader from '@/components/Loader.vue'
+import Card from '@/components/Card.vue'
+//EXPORTS
 export default {
 name: 'Tvlist',
 components:{
     Loader,
+    Card,
 },
 //Import of tv list in App.vue with props( expects an array)
 props:{
@@ -68,24 +59,7 @@ methods:{
 h1{
     color:rgb(189, 3, 3);
 }
-h3{
-    font-size:18px;
-}
 
-.placeholder_image{
-    height:100%;
-    width:150px;
-    object-fit: cover;
-}
-
-.description{
-    background-color:black;
-    position:absolute;
-    top:0;
-    width:160px;
-    height:300px;
-    display:none;
-}
 
    
 
