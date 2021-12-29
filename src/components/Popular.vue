@@ -30,7 +30,7 @@
 <h1>TV SERIES</h1>
 
 <!--SLIDER MOVIES-->
-
+<div class="container">
 
 <VueSlickCarousel v-bind="settings">
 <div v-for='(series,index) in popularSeries' :key="`tv-${index}`">
@@ -45,7 +45,7 @@
         </div>
 </VueSlickCarousel>
 
-
+</div>
 
 
 </section>
