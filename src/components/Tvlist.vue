@@ -1,12 +1,15 @@
 <template>
   <section>
       <!--TV LIST-->
+
       <h1 class="text-center">Tv series</h1>
       <div v-if="tvList !== null" class="d-flex flex-wrap container">
       <!--Loopin our prop tvList that expects an array(that array is in Header,
        it's our "tvList" (our array in API)-->
 
-      <div  v-for='(series,index) in tvList' :key="`tv-${index}`">
+       <!--Popular tv list-->
+
+      <div v-for='(series,index) in tvList' :key="`tv-${index}`">
           <Card 
             :poster='series.poster_path'
             :placeholder='"https://www.auroraviaggi.com/media/1009/sm-placeholder-1024x512.png"'
@@ -14,9 +17,9 @@
             :originalTitle='series.original_name' 
             :language='series.original_language'
             :vote='series.vote_average'/>
-         
-          </div>
+        </div>
       </div>
+      
       <Loader v-else />
 
   </section>

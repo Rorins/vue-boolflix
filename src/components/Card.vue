@@ -14,7 +14,7 @@
           <!--for element (number) of vote, from 1 to 5-->
           <h3>Vote:</h3>
           <i v-for='(number,index) in roundNumber(vote)' :key="`movie-${index}`" class="fas fa-star"></i>
-          <i v-for="(number, index) in 5 - roundNumber(vote) " :key="index" class="far fa-star"></i> 
+          <i v-for="(number, index) in 5 - roundNumber(vote) " :key="index" class="far fa-star"></i>
           </div>
 </div>
 </template>
@@ -54,29 +54,40 @@ h3{
 }
 
 .netflix_card{
-    height:200px;
-    width:150px;
+    height:300px;
+    width:200px;
     position:relative;
     margin:20px;
+    transition: 1s;
     &:hover{
     cursor:pointer;
+    transform:scale(1.3);
+    z-index:1;
     }
     &:hover .description{
         display:block;
     }
 }
 
+//POSTERS
+.poster {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+}
+
 .placeholder_image{
     height:100%;
-    width:150px;
-    object-fit: cover;
+    width:100%;
+    object-fit:cover;
 }
 
 .description{
-    background-color:black;
+    background-color:rgba(0, 0, 0, 0.849);
     position:absolute;
-    top:0;
-    width:160px;
+    bottom:0;
+    width:200px;
     height:200px;
     display:none;
 }

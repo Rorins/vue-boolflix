@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-   <!--Header-->
+   <!--HEADER-->
    <!--This is like getMovie(data) it has a parameter we don't see-->
   <Header @search="getMovies" />
 
-  <!--Main-->
+  <!--MAIN-->
   <main>
     <!--Our movieList PROP was expecting an array in Movielist COMPONENT, this array is in fact
     our "movieList" (our array in API) this can help us add logic(card generation to Movielist)
     while fetching the data from the API here, same for TVlist -->
+  <div v-if="movieList !==null && Tvlist !==null">
     <Movielist :movieList = "movieList"/>
     <Tvlist :tvList = "tvList" />
+  </div>
+    <Popular v-else/>
 
   </main>
   </div>
@@ -20,6 +23,7 @@
 import Header from '@/components/Header.vue';
 import Movielist from '@/components/Movielist.vue';
 import Tvlist from '@/components/Tvlist.vue';
+import Popular from '@/components/Popular.vue';
 //axios will stay here so it's easier to communicate with Movielist(emit thing)
 import axios from 'axios';
 
@@ -29,6 +33,7 @@ export default {
   Header,
   Movielist,
   Tvlist,
+  Popular,
   },
   data(){
     return {

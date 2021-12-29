@@ -6,7 +6,7 @@
 
       <!--Loopin our prop movieList that expects an array(that array is in Header,
        it's our "movieList" (our array in API)-->
-
+      
       <div v-for='(movie,index) in movieList' :key="`movie-${index}`">
           <Card 
             :poster='movie.poster_path'
@@ -14,9 +14,12 @@
             :title='movie.title'
             :originalTitle='movie.original_title' 
             :language='movie.original_language'
-            :vote='movie.vote_average'/>
+            :vote='movie.vote_average'
+            :popularity='movie.popularity'
+            />
 
       </div>
+
       </div>
 
       <Loader v-else />

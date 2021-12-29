@@ -2,7 +2,7 @@
   <header>
      <!--NAVBAR-->
  <nav class="navbar fixed-top navbar-expand-lg navbar-dark ">
-  <a href=""><img class="logo" src="../assets/netflix-logo.png" alt=""></a>
+  <a class="logo" href="https://fontmeme.com/netflix-font/"><img src="https://fontmeme.com/permalink/211227/f3b41fffcd0a95fb3b5a03cb0bb79b60.png" alt="netflix-font" border="0"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -65,7 +65,7 @@ background-color: black;
 padding-right:20px;
 color:$primary-col;
 }
-  .logo{
+  .logo img{
     width:150px;
     }
   button{
