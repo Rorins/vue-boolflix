@@ -1,14 +1,14 @@
 <template>
 <section>
 
+<!--SLIDER MOVIES-->
+<div class="container">
+
 <h1>Popular</h1>
 <!--MOVIES-->
 <h1>MOVIES</h1>
 
-<!--SLIDER MOVIES-->
-<div class="container" >
-
-<VueSlickCarousel v-bind="settings" >
+<VueSlickCarousel v-if="popularMovies.length > 0"  v-bind="settings" >
 <div v-for='(movie,index) in popularMovies' :key="`movie-${index}`" >
 
         <Card 
@@ -26,13 +26,14 @@
 
 </div>
 
+<!--SLIDER SERIES-->
+<div class="container">
+
 <!--SERIES-->
 <h1>TV SERIES</h1>
 
-<!--SLIDER MOVIES-->
-<div class="container">
-
-<VueSlickCarousel v-bind="settings">
+<!--showing only when all divs are loaded-->
+<VueSlickCarousel v-if="popularSeries.length > 0" v-bind="settings">
 <div v-for='(series,index) in popularSeries' :key="`tv-${index}`">
 
           <Card 
@@ -54,7 +55,7 @@
 <script>
 import axios from 'axios';
 import Card from '@/components/Card.vue';
-import VueSlickCarousel from 'vue-slick-carousel'
+import VueSlickCarousel from 'vue-slick-carousel';
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
@@ -71,11 +72,11 @@ data(){
         settings:{
             arrows: true,
             dots: true,
-            infinite: true,
-            slidesToShow: 5,
-            rows: 2,
+            infinite: false,
+            rows: 1,
             speed: 500,
             centerMode:true,
+            slidesToScroll: 1,
         }
     }
 },
