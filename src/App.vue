@@ -13,9 +13,9 @@
     <Movielist :movieList = "movieList"/>
     <Tvlist :tvList = "tvList" />
   </div>
-    <Popular v-else/>
-
+    <Recommendations v-else/>
   </main>
+  
   </div>
 </template>
 
@@ -23,7 +23,7 @@
 import Header from '@/components/Header.vue';
 import Movielist from '@/components/Movielist.vue';
 import Tvlist from '@/components/Tvlist.vue';
-import Popular from '@/components/Popular.vue';
+import Recommendations from '@/components/Recommendations.vue';
 //axios will stay here so it's easier to communicate with Movielist(emit thing)
 import axios from 'axios';
 
@@ -33,7 +33,7 @@ export default {
   Header,
   Movielist,
   Tvlist,
-  Popular,
+  Recommendations,
   },
   data(){
     return {

@@ -17,7 +17,6 @@
             :vote='movie.vote_average'
             :popularity='movie.popularity'
             />
-
       </div>
 
       </div>
@@ -49,7 +48,7 @@ props:{
 <style scoped lang="scss">
 
 h1{
-    color:rgb(189, 3, 3);
+    color:rgb(255, 255, 255);
 }
 
 </style>

@@ -1,7 +1,9 @@
 <template>
+
+<!--NETFLIX CARD-->
 <div class="netflix_card">
   <!--Adding poster-->
-          <img class="placeholder_image" v-if="poster == null" :src="placeholder" alt="">
+          <img class="placeholder_image" v-if="poster == null" :src="placeholder" alt="This image is not available">
           <img v-else class="poster" :src="`https://image.tmdb.org/t/p/w154/${poster}`" :alt="originalTitle">
           <!--Show only with hover-->
           <div class="description">
@@ -17,6 +19,7 @@
           <i v-for="(number, index) in 5 - roundNumber(vote) " :key="index" class="far fa-star"></i>
           </div>
 </div>
+
 </template>
 
 <script>
@@ -30,6 +33,7 @@ originalTitle: String,
 language:String,
 vote: String,
 },
+
 methods:{
     //Add flag function, 
     //it has a parameter(this parameter will be the string 'it' or 'eng' of our API array)
