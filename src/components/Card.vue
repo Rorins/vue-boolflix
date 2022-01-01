@@ -53,11 +53,10 @@ methods:{
 
 <style scoped lang="scss">
 
-h3{
-    font-size:18px;
-}
 
+//NETFLIX CARD
 .netflix_card{
+    text-align: center;
     height:300px;
     width:200px;
     position:relative;
@@ -71,6 +70,17 @@ h3{
     &:hover .description{
         display:block;
     }
+h3{
+    font-size:18px;
+}
+}
+.description{
+    background-color:rgba(0, 0, 0, 0.685);
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:100%;
+    display:none;
 }
 
 //POSTERS
@@ -87,13 +97,5 @@ h3{
     object-fit:cover;
 }
 
-.description{
-    background-color:rgba(0, 0, 0, 0.849);
-    position:absolute;
-    bottom:0;
-    width:200px;
-    height:200px;
-    display:none;
-}
    
 </style>

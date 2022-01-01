@@ -1,25 +1,6 @@
 <template>
 <section>
 
-<!-- <div class="container-fluid">
-
-<VueSlickCarousel v-if="latestMovies.length > 0"  v-bind="settings">
-<div v-for='(movie,index) in latestMovies' :key="`latestMovie-${index}`" >
-
-        <Card 
-            :poster='movie.poster_path'
-            :placeholder='"https://www.auroraviaggi.com/media/1009/sm-placeholder-1024x512.png"'
-            :title='movie.title'
-            :originalTitle='movie.original_title' 
-            :language='movie.original_language'
-            :vote='movie.vote_average'
-            :popularity='movie.popularity'
-        />
-
-</div>
-</VueSlickCarousel>
-
-</div> -->
 
 <!--SLIDER MOVIES-->
 <div class="container">
@@ -90,8 +71,6 @@ data(){
     return{
         popularMovies:null,
         popularSeries:null,
-        latestMovies:null,
-        latestSeries:null,
 
 //CAROUSEL SETTINGS
         settings:{
@@ -109,7 +88,6 @@ data(){
 },
 created(){
     this.getPopular();
-    this.getLatest();
 },
 methods:{
     //POPULAR
@@ -131,30 +109,13 @@ methods:{
     .catch(error => console.log(error));
         
     },
-    
-    //LATEST
-    getLatest(){
-    //MOVIES CALL
-    axios.get('https://api.themoviedb.org/3/tv/latest?api_key=5ac3e59b84003d2645abcdbaac824d36%26language%3Den-US%26page%3D1&language=en-US')
-    .then(result=>{
-        //assigning data of API to movielist, we can refer to the array as movieList now
-        this.latestMovies = result.data.results;
-    })
-    .catch(error => console.log(error));
-
-    //TVSHOW CALL with axios
-    axios.get('https://api.themoviedb.org/3/tv/latest?api_key=5ac3e59b84003d2645abcdbaac824d36%26language%3Den-US%26page%3D1&language=en-US')
-    .then(result=>{
-        //assigning data of API to tvlist, we can refer to the array as tvList now
-        this.latestSeries = result.data.results;
-    })
-    .catch(error => console.log(error));
-        
-    },
     }
 }
 </script>
 
-<style scoped lang="scss">
-
+<style lang="scss">
+//CAROUSEL
+.container .slick-list{
+    padding:50px;
+}
 </style>
